@@ -16,6 +16,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: Start containers
       run: docker-compose -f "docker-compose.yml" up -d --build
+    - name: Run Tests
+      run: |
+        echo --- Running test cases ---
+        docker-compose -f "docker-compose.yml" -p testing up --build --exit-code-from ea_test
+        echo --- Completed test cases ---
     - name: Stop containers
       if: always()
       run: docker-compose -f "docker-compose.yml" down
