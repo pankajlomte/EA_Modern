@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Start containers
-      run: docker-compose -f "docker-compose.yml" up -d --build --exit-code-from ea_test
+      run: docker-compose -f "docker-compose.yml" up --build --exit-code-from ea_test
     - name: Stop containers
       if: always()
       run: docker-compose -f "docker-compose.yml" down
