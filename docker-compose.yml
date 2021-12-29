@@ -57,7 +57,7 @@ services:
     image: selenium/node-docker:4.1.1-20211217
     volumes:
       - ./assets:/opt/selenium/assets
-      - ${PWD}/GridConfig/config.toml:/opt/bin/config.toml
+      - ${PWD}/GridConfig/Config.toml:/opt/bin/Config.toml
     depends_on:
       - selenium-hub
     environment:
