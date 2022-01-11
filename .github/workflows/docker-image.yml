@@ -16,6 +16,13 @@ jobs:
     - uses: actions/checkout@v2
     - name: Start containers
       run: docker-compose -f "docker-compose.yml" up -d
+    - name: Wait / Sleep
+      # You may pin to the exact commit or the version.
+      # uses: jakejarvis/wait-action@919fc193e07906705e5b7a50f90ea9e74d20b2b0
+      uses: jakejarvis/wait-action@v0.1.1
+      with:
+        # Follows the Linux sleep syntax for time units: a number followed by s for seconds, m for minutes, etc
+        time: '180s'
     - name: Stop containers
       if: always()
       run: docker-compose -f "docker-compose.yml" down
