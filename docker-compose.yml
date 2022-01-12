@@ -42,7 +42,6 @@ services:
 
   ea_test:
     image: ea_test
-    container_name: eatest
     build:
       context: .
       dockerfile: EATestBDD/Dockerfile
@@ -52,11 +51,6 @@ services:
       - selenium-hub
     networks:
       - ea_network
-    healthcheck:
-        test: ["CMD", "curl", "-f", "http://selenium-hub:4444/wd/hub/status"]
-        interval: 30s
-        timeout: 10s
-        retries: 5
 
   node-docker:
     image: selenium/node-docker:4.1.1-20211217
@@ -81,11 +75,7 @@ services:
       - "4444:4444"
     networks:
       - ea_network
-    healthcheck:
-        test: ["CMD", "curl", "-f", "http://localhost:4444/wd/hub/status"]
-        interval: 30s
-        timeout: 10s
-        retries: 5
+
 
 networks: 
    ea_network:
