@@ -8,7 +8,7 @@ project="e2etest"
 
 export COMPOSE_HTTP_TIMEOUT=200
 
-docker-compose -p $project build
+docker-compose -p "$project" build
 
 docker-compose -p "$project" up -d ea_api ea_webapp db node-docker selenium-hub
 docker-compose -p "$project" up --no-deps ea_test
