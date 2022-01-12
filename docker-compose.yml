@@ -76,6 +76,11 @@ services:
       - "4444:4444"
     networks:
       - ea_network
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:4444/wd/hub/status"]
+        interval: 30s
+        timeout: 10s
+        retries: 5
 
 networks: 
    ea_network:
