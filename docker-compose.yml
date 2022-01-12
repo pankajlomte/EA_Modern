@@ -6,6 +6,7 @@ services:
     build:
       context: .
       dockerfile: ProductAPI/Dockerfile
+      network: ea_network
     restart: on-failure      
     ports:
       - 5000:8001
@@ -20,6 +21,7 @@ services:
     build:
       context: .
       dockerfile: EAWebApp/Dockerfile
+      network: ea_network
     restart: on-failure      
     ports:
       - 5001:8000
@@ -46,6 +48,7 @@ services:
     build:
       context: .
       dockerfile: EATestBDD/Dockerfile
+      network: ea_network
     restart: on-failure
     depends_on:
       - ea_api
