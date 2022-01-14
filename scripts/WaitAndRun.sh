@@ -9,7 +9,7 @@ until [ ]; do
 done
 
 until [ ]; do
-   sleep 10
+   sleep 30
    curl -f "http://selenium-hub:4444/wd/hub/status" && break
 done
 
