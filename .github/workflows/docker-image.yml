@@ -1,8 +1,6 @@
 name: Run E2E Application and Tests
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -17,4 +15,9 @@ jobs:
     - name: Start containers
       run : |
         sh ./scripts/run.sh
+    - name: Copy report and videos
+      env:
+        REPORT_DIRECTORY: /assets
+      run: |
+        cp -r 
 
