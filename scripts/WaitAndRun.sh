@@ -8,6 +8,9 @@ until [ ]; do
    sleep 1
 done
 
-while true; do if curl -s -m 5 -o /dev/null http://selenium-hub:4444/wd/hub/status; then echo "OK: $(date)"; else echo "FAIL: $(date)"; fi; sleep 5; done
+until [ ]; do
+   sleep 10
+   curl -f "http://selenium-hub:4444/wd/hub/status" && break
+done
 
 dotnet test --logger "console;verbosity=detailed"
