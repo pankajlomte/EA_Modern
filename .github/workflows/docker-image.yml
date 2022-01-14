@@ -15,9 +15,9 @@ jobs:
     - name: Start containers
       run : |
         sh ./scripts/run.sh
-    - name: Copy report and videos
-      env:
-        REPORT_DIRECTORY: /assets
-      run: |
-        cp -r 
+    - name: Upload the videos
+    - uses: actions/upload-artifact@v2
+      with:
+        name: SeleniumAssets
+        path: ./assets
 

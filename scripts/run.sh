@@ -6,7 +6,6 @@ set -x
 project="e2etest"
 
 export COMPOSE_HTTP_TIMEOUT=200
-export REPORT_DIRECTORY="/report"
 
 docker-compose -p "$project" build
 
@@ -19,6 +18,3 @@ if [ $exit_code -eq 0 ]; then
 else
     echo "Test failed"
 fi
-
-rm -rf ./report
-docker cp ${project}_ea_test_1:$REPORT_DIRECTORY ./report

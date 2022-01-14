@@ -160,7 +160,7 @@ this.FeatureBackground();
  testRunner.And("I create product with following details", ((string)(null)), table2, "And ");
 #line hidden
 #line 17
- testRunner.When("I click the Detailsss link of the newly created product", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click the Details link of the newly created product", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 18
  testRunner.Then("I see all the product details are created as expected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
