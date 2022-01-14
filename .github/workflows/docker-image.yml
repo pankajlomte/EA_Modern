@@ -1,6 +1,8 @@
 name: Run E2E Application and Tests
 
 on:
+  push:
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
