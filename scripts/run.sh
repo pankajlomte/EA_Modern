@@ -11,6 +11,7 @@ docker-compose -p "$project" build
 
 docker-compose -p "$project" up -d ea_api ea_webapp db selenium-hub firefox chrome
 docker-compose -p "$project" up --no-deps ea_test
+sleep 10
 ls -l
 exit_code=$(docker inspect ${project}_ea_test_1 -f '{{ .State.ExitCode }}')
 
