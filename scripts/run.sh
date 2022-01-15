@@ -15,7 +15,9 @@ docker-compose -p "$project" up -d ea_api ea_webapp db selenium-hub firefox chro
 docker-compose -p "$project" up --no-deps ea_test
 sleep 10
 
-docker cp ${project}_ea_test:/src/EATestBDD/bin/Debug/net6.0/TestExecution.json ./reports
+echo "Get container docker pwd"
+docker exec -it ${project}_ea_test pwd 
+docker cp ${project}_ea_test:./EATestBDD/bin/Debug/net6.0/TestExecution.json ./reports
 ls -l
 echo "TestExecution.json file copied to reports folder"	
 ls -l ./reports
