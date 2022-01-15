@@ -16,8 +16,8 @@ ls -l
 docker-compose -p "$project" up -d ea_api ea_webapp db selenium-hub firefox chrome
 docker-compose -p "$project" up --no-deps ea_test
 
-docker cp ea_test:/src/EATestBDD/bin/Debug/net6.0/TestExecution.json ./reports
-echo "TestExecution.json file copied to reports folder"	
+docker cp ea_test:/src/EATestBDD/LivingDoc.html ./reports
+echo "LivingDoc file copied to reports folder"	
 ls -l ./reports
 
 exit_code=$(docker inspect ea_test -f '{{ .State.ExitCode }}')
