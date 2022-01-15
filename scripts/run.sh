@@ -9,14 +9,17 @@ export COMPOSE_HTTP_TIMEOUT=200
 
 docker-compose -p "$project" build
 
-mkdir -m 777 videos
+mkdir -m 777 reports
 ls -l
 docker-compose -p "$project" up -d ea_api ea_webapp db selenium-hub firefox chrome
 docker-compose -p "$project" up --no-deps ea_test
 sleep 10
+
+docker cp ${project}_ea_test:/src/EATestBDD/bin/Debug/net6.0/TestExecution.json ./reports
 ls -l
-cd ..
-ls -l
+echo "TestExecution.json file copied to reports folder"	
+ls -l ./reports
+
 exit_code=$(docker inspect ${project}_ea_test_1 -f '{{ .State.ExitCode }}')
 
 if [ $exit_code -eq 0 ]; then
