@@ -14,7 +14,3 @@ until [ ]; do
 done
 
 dotnet test --logger "console;verbosity=detailed"
-echo "Test finished"
-echo "Getting container docker pwd"
-docker exec ea_test pwd
-docker cp ${project}_ea_test:./EATestBDD/bin/Debug/net6.0/TestExecution.json ./reports
