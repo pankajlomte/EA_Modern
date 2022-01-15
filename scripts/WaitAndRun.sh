@@ -14,5 +14,3 @@ until [ ]; do
 done
 
 dotnet test --logger "console;verbosity=detailed"
-echo "Test container PWD"
-ls - l
