@@ -45,7 +45,6 @@ services:
     build:
       context: .
       dockerfile: EATestBDD/Dockerfile
-    container_name: ea_test
     restart: on-failure
     depends_on:
       - ea_api
