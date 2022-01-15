@@ -16,7 +16,7 @@ docker-compose -p "$project" up --no-deps ea_test
 sleep 10
 
 echo "Get container docker pwd"
-docker exec -it ea_test pwd 
+docker exec ea_test pwd 
 docker cp ${project}_ea_test:./EATestBDD/bin/Debug/net6.0/TestExecution.json ./reports
 ls -l
 echo "TestExecution.json file copied to reports folder"	
