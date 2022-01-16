@@ -17,9 +17,13 @@ jobs:
     - name: Start containers
       run : |
         sh ./scripts/run.sh
-    - name: Upload the videos
+    - name: Publish Test Reports
       uses: actions/upload-artifact@v2
       with:
         name: SeleniumAssets
         path: ./reports
-
+    - name: Deploy report page to GitHub Page
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./reports
