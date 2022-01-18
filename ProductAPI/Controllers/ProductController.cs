@@ -26,6 +26,7 @@ namespace ProductAPI.Controllers
         }
 
         // GET: ProductController/GetProducts
+        //Adding a dummy comments
         [HttpGet]
         [Route("/[controller]/[action]")]
         public ActionResult<List<Product>> GetProducts()
